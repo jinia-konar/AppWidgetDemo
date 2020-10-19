@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppWidgetDemo</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="want_to_learn_more">Want to learn more?</string>
+    <string name="tap_on_me">Tap on me</string>
+    <string name="widgetURL">https://developer.android.com/guide/topics/appwidgets</string>
+</resources>
