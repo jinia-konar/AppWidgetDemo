@@ -6,12 +6,15 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.widget.RemoteViews
+import androidx.annotation.RequiresApi
 
 /**
  * Implementation of App Widget functionality.
  */
 class AppWidget : AppWidgetProvider() {
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onUpdate(
         context: Context,
         appWidgetManager: AppWidgetManager,
@@ -23,6 +26,7 @@ class AppWidget : AppWidgetProvider() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun updateAppWidget(
         context: Context,
         appWidgetManager: AppWidgetManager,
@@ -42,9 +46,10 @@ class AppWidget : AppWidgetProvider() {
         // Construct the RemoteViews object
         val views = RemoteViews(context.packageName, R.layout.app_widget)
         views.setOnClickPendingIntent(R.id.section_layout, pending)
+        views.setTextColor(R.id.sub_text, context.getColor(R.color.colorAccent))
+        views.setImageViewResource(R.id.tap_image, R.drawable.tap)
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views)
     }
 }
-

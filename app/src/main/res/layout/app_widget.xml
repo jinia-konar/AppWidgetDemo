@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:padding="@dimen/widget_margin"
-    android:clickable="true">
+    android:clickable="true"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/title_text"
@@ -16,10 +17,20 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/sub_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tap_on_me"
         android:layout_below="@+id/title_text"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/tap_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/sub_text"
+        android:contentDescription="@string/tap_on_image" />
 
 </RelativeLayout>
